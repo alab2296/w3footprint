@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>W3Footprint — Secure Digital Solutions</title>
-  <meta name="description" content="W3Footprint provides Android development, blockchain, AI integration, and cybersecurity services." />
+  <meta name="description" content="W3Footprint provides Android development, blockchain, AI integration, data analytics, and cybersecurity services." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <style>
@@ -33,31 +33,36 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.2rem 6%;
-      background: rgba(6,13,26,0.85);
+      background: rgba(6,13,26,0.88);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
 
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      text-decoration: none;
+    }
+    .logo img {
+      height: 38px;
+      width: auto;
+    }
+    .logo-text {
       font-family: 'Space Mono', monospace;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--cyan);
       letter-spacing: 0.04em;
-      text-decoration: none;
     }
-    .logo span { color: var(--white); }
+    .logo-text span { color: var(--white); }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.2rem;
-    }
+    nav ul { list-style: none; display: flex; gap: 2.2rem; }
 
     nav ul a {
       color: var(--muted);
@@ -78,12 +83,9 @@
       border-radius: 4px;
       transition: background 0.2s, color 0.2s !important;
     }
-    .nav-cta:hover {
-      background: var(--cyan) !important;
-      color: var(--navy) !important;
-    }
+    .nav-cta:hover { background: var(--cyan) !important; color: var(--navy) !important; }
 
-    /* ── HERO ── */
+    /* HERO */
     #hero {
       min-height: 100vh;
       display: flex;
@@ -145,7 +147,7 @@
     .hero-sub {
       font-size: 1.12rem;
       color: var(--muted);
-      max-width: 520px;
+      max-width: 540px;
       margin-bottom: 2.8rem;
       line-height: 1.75;
     }
@@ -175,12 +177,12 @@
       font-size: 0.9rem;
       text-decoration: none;
       letter-spacing: 0.03em;
-      transition: border-color 0.2s, transform 0.2s;
+      transition: border-color 0.2s, color 0.2s, transform 0.2s;
       display: inline-block;
     }
     .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
 
-    /* ── SECTIONS ── */
+    /* SECTIONS */
     section { padding: 6rem 6%; }
 
     .section-label {
@@ -211,12 +213,12 @@
 
     .section-intro {
       color: var(--muted);
-      max-width: 540px;
+      max-width: 560px;
       margin-bottom: 3.5rem;
       font-size: 1.05rem;
     }
 
-    /* ── SERVICES ── */
+    /* SERVICES */
     #services { background: var(--navy2); }
 
     .services-grid {
@@ -237,8 +239,11 @@
     }
     .service-card:hover { background: var(--navy3); }
 
-    .service-icon {
-      font-size: 1.6rem;
+    .service-number {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.14em;
       margin-bottom: 1.2rem;
       display: block;
     }
@@ -269,7 +274,7 @@
       border-radius: 2px;
     }
 
-    /* ── ABOUT ── */
+    /* ABOUT */
     #about {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -279,7 +284,7 @@
 
     .about-visual {
       position: relative;
-      height: 340px;
+      height: 360px;
     }
 
     .about-box {
@@ -296,7 +301,7 @@
 
     .about-box.main {
       top: 0; left: 0; right: 0;
-      bottom: 60px;
+      bottom: 70px;
     }
 
     .about-box.stat {
@@ -332,14 +337,22 @@
 
     .about-text p strong { color: var(--white); font-weight: 600; }
 
-    /* ── CONTACT ── */
+    .about-note {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-left: 2px solid var(--border);
+      padding-left: 1rem;
+      margin-top: 1.8rem;
+      line-height: 1.9;
+    }
+
+    /* CONTACT */
     #contact { background: var(--navy2); text-align: center; }
 
     .contact-inner { max-width: 600px; margin: 0 auto; }
-
     .contact-inner h2 { margin-bottom: 1rem; }
-
-    .contact-inner p {
+    .contact-inner > p {
       color: var(--muted);
       margin-bottom: 2.5rem;
       font-size: 1rem;
@@ -369,10 +382,10 @@
       font-size: 0.82rem;
       color: var(--muted);
       font-family: 'Space Mono', monospace;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
     }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
       padding: 2rem 6%;
       border-top: 1px solid var(--border);
@@ -391,42 +404,34 @@
     }
 
     .footer-meta {
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: var(--muted);
       font-family: 'Space Mono', monospace;
       text-align: right;
-      line-height: 1.8;
+      line-height: 1.9;
     }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       nav ul { display: none; }
       #about { grid-template-columns: 1fr; gap: 3rem; }
-      .about-visual { height: 260px; }
+      .about-visual { height: 280px; }
       footer { flex-direction: column; text-align: center; }
       .footer-meta { text-align: center; }
     }
 
-    /* ── SCAN LINE EFFECT on hero ── */
+    /* SCANLINE */
     #hero::after {
       content: '';
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0,0,0,0.03) 2px,
-        rgba(0,0,0,0.03) 4px
+        0deg, transparent, transparent 2px,
+        rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px
       );
       pointer-events: none;
     }
 
-    /* cursor blink in mono text */
-    .blink {
-      animation: blink 1.1s step-end infinite;
-      color: var(--cyan);
-    }
+    .blink { animation: blink 1.1s step-end infinite; color: var(--cyan); }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
   </style>
 </head>
@@ -434,7 +439,10 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#hero" class="logo">W3<span>footprint</span></a>
+  <a href="#hero" class="logo">
+    <img src="logo.png" alt="W3footprint logo" />
+    <span class="logo-text">W3<span>footprint</span></span>
+  </a>
   <ul>
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
@@ -450,7 +458,7 @@
     <p class="hero-eyebrow">Sweden-based · Est. 2025</p>
     <h1>Leave a <span class="accent">secure</span><br>digital footprint.</h1>
     <p class="hero-sub">
-      W3footprint builds Android applications, blockchain systems, and AI-powered solutions — with security at the core of everything.
+      W3footprint is a distributed technology team building Android applications, blockchain systems, AI-powered products, and data solutions — with security engineered in from the start.
     </p>
     <div class="hero-actions">
       <a href="#services" class="btn-primary">Explore services</a>
@@ -463,31 +471,37 @@
 <section id="services">
   <p class="section-label">What we do</p>
   <h2>Built for the modern web.<br>Secured for the future.</h2>
-  <p class="section-intro">From mobile apps to decentralized systems — every solution is engineered with performance, security, and longevity in mind.</p>
+  <p class="section-intro">From native mobile apps to decentralized systems and business intelligence — every solution is engineered with performance, security, and longevity in mind.</p>
 
   <div class="services-grid">
     <div class="service-card">
-      <span class="service-icon">📱</span>
+      <span class="service-number">01</span>
       <h3>Android Development</h3>
-      <p>Native Android applications built with Kotlin and Jetpack Compose. Clean architecture, smooth UX, and production-ready code.</p>
-      <span class="service-tag">Kotlin · Jetpack · Android</span>
+      <p>Native Android applications built with Kotlin and Jetpack Compose, as well as Java/XML for legacy systems. Clean architecture, smooth UX, production-ready code.</p>
+      <span class="service-tag">Kotlin · Java · Jetpack Compose</span>
     </div>
     <div class="service-card">
-      <span class="service-icon">⛓</span>
+      <span class="service-number">02</span>
       <h3>Blockchain & Web3</h3>
-      <p>Smart contracts, decentralized applications, and Web3 integrations. Building transparent and trustless digital systems.</p>
-      <span class="service-tag">Web3 · Smart Contracts · DApps</span>
+      <p>Solidity smart contracts developed on the Brownie framework, decentralized applications, and full Web3 integrations. Transparent and trustless by design.</p>
+      <span class="service-tag">Solidity · Brownie · Web3 · DApps</span>
     </div>
     <div class="service-card">
-      <span class="service-icon">🤖</span>
+      <span class="service-number">03</span>
       <h3>AI Integration</h3>
-      <p>Embedding intelligent features into your product — from natural language processing to predictive systems and automation.</p>
-      <span class="service-tag">LLMs · Automation · ML</span>
+      <p>Embedding intelligent features into modern products — natural language processing, predictive systems, automation, and data-driven decision making.</p>
+      <span class="service-tag">LLMs · Python · Automation · ML</span>
     </div>
     <div class="service-card">
-      <span class="service-icon">🔐</span>
+      <span class="service-number">04</span>
+      <h3>Data Analytics</h3>
+      <p>Business intelligence, interactive dashboards, and data visualization that turn raw data into clear decisions. Built with Python and Power BI.</p>
+      <span class="service-tag">Power BI · Python · BI · Reporting</span>
+    </div>
+    <div class="service-card">
+      <span class="service-number">05</span>
       <h3>Cybersecurity</h3>
-      <p>Security audits, vulnerability assessments, and hardening of digital systems. Your digital footprint — protected.</p>
+      <p>Security audits, vulnerability assessments, and hardening of digital systems. Your digital footprint — identified, assessed, and protected.</p>
       <span class="service-tag">Audits · Pentesting · Hardening</span>
     </div>
   </div>
@@ -499,24 +513,28 @@
     <div class="about-box main">
       <div style="color:var(--muted);margin-bottom:0.8rem;font-size:0.7rem;">// w3footprint.se</div>
       <div>&gt; location: <span style="color:var(--white)">Stockholm, Sweden</span></div>
-      <div>&gt; services: <span style="color:var(--white)">4 active</span></div>
+      <div>&gt; entity: <span style="color:var(--white)">Enskild firma</span></div>
+      <div>&gt; services: <span style="color:var(--white)">5 active</span></div>
+      <div>&gt; team: <span style="color:var(--white)">distributed · remote</span></div>
       <div>&gt; status: <span style="color:#4ade80">operational</span></div>
       <div>&gt; security: <span style="color:#4ade80">enabled</span></div>
       <div style="margin-top:0.8rem">&gt; <span class="blink">_</span></div>
     </div>
     <div class="about-box stat">
-      <span class="stat-number">4</span>
+      <span class="stat-number">5</span>
       <span class="stat-label">Core services</span>
     </div>
   </div>
 
   <div class="about-text">
     <p class="section-label">About</p>
-    <h2>Small team.<br>Serious craft.</h2>
-    <p>W3footprint is a Sweden-registered independent technology practice focused on building <strong>secure, modern digital products</strong> across mobile, blockchain, and AI.</p>
-    <p>Every project is approached with an engineer's precision and a security mindset — because the best software is software that can be trusted.</p>
-    <p style="font-family:'Space Mono',monospace;font-size:0.8rem;color:var(--muted);border-left:2px solid var(--border);padding-left:1rem;margin-top:1.8rem;">
-      Registered in Sweden · F-skatt · hello@w3footprint.se
+    <h2>Distributed team.<br>Serious craft.</h2>
+    <p>W3footprint is a Sweden-registered technology practice built around a <strong>distributed team of developers and data specialists</strong> — covering mobile, blockchain, AI, analytics, and security.</p>
+    <p>Every project is approached with an engineer's precision and a security mindset. We build things that perform, scale, and can be trusted.</p>
+    <p>Based in Sweden. Working remotely with clients worldwide.</p>
+    <p class="about-note">
+      Registered in Sweden · F-skatt · VAT registered<br>
+      hello@w3footprint.se
     </p>
   </div>
 </section>
@@ -528,9 +546,9 @@
     <h2>Ready to build<br>something secure?</h2>
     <p>Describe your project and we'll get back to you within 24 hours.</p>
     <a href="mailto:hello@w3footprint.se" class="contact-email">
-      ✉ hello@w3footprint.se
+      hello@w3footprint.se
     </a>
-    <p class="contact-location">📍 Stockholm, Sweden · Available for remote projects worldwide</p>
+    <p class="contact-location">Stockholm, Sweden · Available for remote projects worldwide</p>
   </div>
 </section>
 
@@ -539,8 +557,7 @@
   <span class="footer-logo">W3footprint</span>
   <div class="footer-meta">
     <div>© 2025 W3footprint · Registered in Sweden</div>
-    <div>VAT: SE961114683901 · Stockholm, Sweden</div>
-    <div>hello@w3footprint.se</div>
+    <div>Stockholm, Sweden · hello@w3footprint.se</div>
   </div>
 </footer>
 
